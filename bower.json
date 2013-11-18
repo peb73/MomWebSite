@@ -1,0 +1,20 @@
+{
+  "name": "MomWebSite",
+  "version": "0.0.0",
+  "authors": [
+    "peb73 <boiteaupe@gmail.com>"
+  ],
+  "description": "mom web site",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.3.0"
+  }
+}
