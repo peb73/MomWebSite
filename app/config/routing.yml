@@ -1,0 +1,5 @@
+peb_mom_web_site:
+    resource: "@pebMomWebSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
