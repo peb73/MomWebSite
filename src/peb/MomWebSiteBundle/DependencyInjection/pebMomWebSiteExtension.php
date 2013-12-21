@@ -14,6 +14,7 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class pebMomWebSiteExtension extends Extension
 {
+
     /**
      * {@inheritDoc}
      */
@@ -25,4 +26,5 @@ class pebMomWebSiteExtension extends Extension
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
     }
+
 }

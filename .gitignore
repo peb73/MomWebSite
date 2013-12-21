@@ -4,3 +4,4 @@
 /src/peb/MomWebSiteBundle/Resources/public/bower_components
 /vendor
 /web/bundles
+.DS_Store
