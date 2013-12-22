@@ -83,6 +83,16 @@ class Actualite
     }
 
     /**
+     * Get formatedDate
+     *
+     * @return string
+     */
+    public function getFormatedDate()
+    {
+        return $this->date->format('d-m-Y H:i:s');
+    }
+
+    /**
      * Set title
      *
      * @param string $title

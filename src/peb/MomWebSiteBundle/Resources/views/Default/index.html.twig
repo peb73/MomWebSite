@@ -9,11 +9,15 @@
     </div>
 
     <div class="content">
-        {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
-        {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
-        {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
-        {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
-        {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
+
+
+        
+
+        {% for actualite in actualites %}
+            {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
+        {% else %}
+            {% include "noactualite.html.twig" %}
+        {% endfor %}
     </div>
 
 {% endblock %}

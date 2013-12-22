@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * class DescriptionRepository
  */
-class DescriptionRepository
+class DescriptionRepository extends EntityRepository
 {
 
 	/**
@@ -18,13 +18,11 @@ class DescriptionRepository
 		
 		$result = $this->getEntityManager()
             ->createQuery(
-                'SELECT d FROM pebMomWebSiteBundle:Description d LIMIT 1'
+                'SELECT d FROM pebMomWebSiteBundle:Description d'
             )
-            ->getResult();
+            ->getOneOrNullResult();
 
-        if(count($result)<0) return null;
-
-        return $result[0];
+        return $result;
 	}
 
 }

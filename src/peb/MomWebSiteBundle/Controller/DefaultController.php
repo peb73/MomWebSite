@@ -15,7 +15,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-    	//return '';
-        return array();
+        return $this->get('peb_mom_web_site.services.default_service')->constructTwigData();
     }
 }
