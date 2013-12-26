@@ -16,9 +16,15 @@ class DefaultService
 	 */
 	private $em;
 
-	public function __construct(EntityManager $em)
+	/**
+	 * @var int
+	 */
+	private $nbActualite;
+
+	public function __construct(EntityManager $em, $nbActualite)
 	{
 		$this->em = $em;
+		$this->nbActualite = $nbActualite;
 	}
 
 	/**
@@ -31,12 +37,12 @@ class DefaultService
         	->getRepository('pebMomWebSiteBundle:Description');
 
         $description = $descriptionRepository->findDescription();
-
+        //die(var_dump($description));
         //actualites
         $actualiteRepository = $this->em
         	->getRepository('pebMomWebSiteBundle:Actualite');
 
-        $actualites = $actualiteRepository->findAll();
+        $actualites = $actualiteRepository->findLastActualite($this->nbActualite);
 
         //result
         return array(

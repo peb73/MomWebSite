@@ -35,6 +35,19 @@ class Image
      */
     private $date;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="local", type="boolean")
+     */
+    private $local;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mimeType", type="string");
+     */
+    private $mimeType;
 
     /**
      * Get id
@@ -90,5 +103,51 @@ class Image
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set local
+     *
+     * @param boolean $local
+     * @return Image;
+     */
+    public function setLocal($local)
+    {
+        $this->local = $local;
+
+        return $this;
+    }
+
+    /**
+     * Get local
+     *
+     * @return boolean
+     */
+    public function getLocal()
+    {
+        return $this->local;
+    }
+
+    /**
+     * Set mimeType
+     *
+     * @param string $mimeType
+     * @return Image
+     */
+    public function setMimeType($mimeType)
+    {
+        $this->mimeType = $mimeType;
+
+        return $this;
+    }
+
+    /**
+     * Get mimeType
+     *
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType;
     }
 }

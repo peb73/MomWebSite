@@ -6,25 +6,18 @@
 
     <parameters>
         <parameter key="peb_mom_web_site.services.default.class">peb\MomWebSiteBundle\Services\DefaultService</parameter>
+        <parameter key="peb_mom_web_site.services.actualite.class">peb\MomWebSiteBundle\Services\ActualiteService</parameter>
     </parameters>
 
     <services>
         <service id="peb_mom_web_site.services.default_service" class="%peb_mom_web_site.services.default.class%">
             <argument type="service" id="doctrine.orm.default_entity_manager"/>
+            <argument>%nb_default_actualite%</argument>
+        </service>
+
+        <service id="peb_mom_web_site.services.actualite_service" class="%peb_mom_web_site.services.actualite.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
         </service>
     </services>
 
-    <!--
-    <parameters>
-        <parameter key="peb_mom_web_site.example.class">peb\MomWebSiteBundle\Example</parameter>
-    </parameters>
-
-    <services>
-        <service id="peb_mom_web_site.example" class="%peb_mom_web_site.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-    </services>
-    -->
 </container>

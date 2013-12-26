@@ -1,6 +1,7 @@
 /app/cache
 /app/logs
 /app/config/parameters.yml
+/images/*
 /src/peb/MomWebSiteBundle/Resources/public/bower_components
 /vendor
 /web/bundles

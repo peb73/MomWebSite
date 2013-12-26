@@ -15,7 +15,7 @@ class ActualiteController extends Controller
      */
     public function actualiteAction()
     {
-        return array();
+        return $this->get('peb_mom_web_site.services.actualite_service')->constructTwigData();
     }
 
 }

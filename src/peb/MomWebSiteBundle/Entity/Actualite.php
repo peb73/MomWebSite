@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Actualite
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="peb\MomWebSiteBundle\Entity\ActualiteRepository")
  */
 class Actualite
 {
@@ -43,11 +43,12 @@ class Actualite
     private $text;
 
     /**
-     * @var string
+     * @var Image
      *
-     * @ORM\Column(name="imagePath", type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="Image")
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id", nullable=true)
      */
-    private $imagePath;
+    private $image;
 
     /**
      * Get id
@@ -139,25 +140,25 @@ class Actualite
     }
 
     /**
-     * Set imagePath
+     * Set image
      *
      * @param string
      * @return Actualite
      */
-    public function setImagePath($imagePath)
+    public function setImage($image)
     {
-        $this->imagePath = $imagePath;
+        $this->image = $image;
 
         return $this;
     }
 
     /**
-     * Get imagePath
+     * Get image
      *
-     * @return string
+     * @return Image
      */
-    public function getImagePath()
+    public function getImage()
     {
-        return $this->imagePath;
+        return $this->image;
     }
 }
