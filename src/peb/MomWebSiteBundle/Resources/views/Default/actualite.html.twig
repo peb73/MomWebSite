@@ -1,24 +1,35 @@
-<div class="pure-g-r content-ribbon">
-    <div class="pure-u-2-3">
-        <div class="l-box">
-            <h4 class="content-subhead">{{actualite.formatedDate}}</h4>
+<div class="content-ribbon shorter">
+    <div class="pure-g-r description">
+        <div class="pure-u-2-3">
+            <div class="l-box">
+                <h4 class="content-subhead">{{actualite.formatedDate}}</h4>
 
-            <h3>{{actualite.title}}</h3>
-            <p>
-                {{actualite.text}}
-            </p>
+                <h3>{{actualite.title}}</h3>
+                <p>
+                    {{actualite.text}}
+                </p>
+            </div>
+        </div>
+
+        <div class="pure-u-1-3">
+            <div class="l-box">
+                {% if actualite.image!=null%}
+                <img src="{{path('peb_momwebsite_image_image', {id: actualite.image.id}) }}" alt="splash image">
+                {% endif %}
+                <!--
+                <img src="http://placehold.it/400x250"
+                     alt="Placeholder image for example.">
+                 -->
+            </div>
+        </div>
+    </div>
+    <div class="pure-g-r link">
+        <div class="pure-u-2-3">
+            ...
+        </div>
+        <div class="pure-u-1-3">
+            <a class="pure-button" href="{{ path('peb_momwebsite_actualite_actualite', {}) }}">Voir l'actualité <i class="fa fa-arrow-right"></i></a>
         </div>
     </div>
 
-    <div class="pure-u-1-3">
-        <div class="l-box">
-            {% if actualite.image!=null%}
-            <img src="{{path('peb_momwebsite_image_image', {id: actualite.image.id}) }}" alt="splash image">
-            {% endif %}
-            <!--
-            <img src="http://placehold.it/400x250"
-                 alt="Placeholder image for example.">
-             -->
-        </div>
-    </div>
 </div>

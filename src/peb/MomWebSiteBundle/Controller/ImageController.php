@@ -31,8 +31,9 @@ class ImageController extends Controller
     	
     	$file =    readfile(sprintf("%s/%s",$imagePath, $image->getPath()));
     	$headers = array(
-    	    'Content-Type'     => 'image/jpg',
-    	    'Content-Disposition' => 'inline; filename="test2.jpg"');
+    	    'Content-Type'     => $image->getMimeType(),
+    	    'Content-Disposition' => pirntf('inline; filename="%s"',$id)
+        );
     	
     	return new Response($file, 200, $headers);
     }

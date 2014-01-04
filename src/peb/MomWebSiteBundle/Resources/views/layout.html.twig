@@ -10,7 +10,8 @@
 		<!-- stylesheet -->
 		{% 
 			stylesheets 
-			'bundles/pebmomwebsite/bower_components/pure/pure-min.css' 
+			'bundles/pebmomwebsite/bower_components/pure/pure-min.css'
+			'bundles/pebmomwebsite/bower_components/font-awesome/css/font-awesome.min.css'
 			'bundles/pebmomwebsite/css/style.css'
 			filter='cssrewrite' 
 		%}
@@ -28,9 +29,11 @@
 
 		            <ul>
 		                <li {% if routing=='default'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_default_index', {}) }}">Accueil</a></li>
-		                <li {% if routing=='actualite'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_actualite_actualite', {}) }}">Actualité</a></li>
+		                <li {% if routing=='actualite'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_actualite_actualite', {}) }}">Actualités</a></li>
 		                <li {% if routing=='galerie'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_galerie_galerie', {}) }}">Galerie</a></li>
+		                <!--
 		                <li {% if routing=='cours'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_cours_cours', {}) }}">Cours</a></li>
+			            -->
 		            </ul>
 		        </div>
 		    </div>
