@@ -18,6 +18,14 @@
     		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 		{% endstylesheets %}
 
+		<!-- script -->
+		{% javascripts 
+			'@pebMomWebSiteBundle/Resources/public/bower_components/jquery/jquery.min.js'
+			'@pebMomWebSiteBundle/Resources/public/bower_components/jcarousel/dist/jquery.jcarousel.min.js'
+		%}
+		    <script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+
 	</head>
 	<body>
 
@@ -47,5 +55,4 @@
 		    </div>
 		</div>
 	<body>
-	<!-- script -->
 </html>

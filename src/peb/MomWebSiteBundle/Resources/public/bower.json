@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "pure": "~0.3.0",
-    "vont-awesome": "4.0.3"
+    "font-awesome": "4.0.3",
+    "jcarousel": "0.3.0"
   }
 }

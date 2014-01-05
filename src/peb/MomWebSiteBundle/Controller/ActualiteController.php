@@ -18,4 +18,12 @@ class ActualiteController extends Controller
         return $this->get('peb_mom_web_site.services.actualite_service')->constructTwigData();
     }
 
+    /**
+     * @Route("/actualite/{id}", requirements={"id"="\d+"})
+     */
+    public function actualiteDetailAction($id)
+    {
+    	return "plop";
+    }
+
 }
