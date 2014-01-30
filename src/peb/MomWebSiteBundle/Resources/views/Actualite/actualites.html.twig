@@ -1,0 +1,15 @@
+{% extends 'pebMomWebSiteBundle::layout.html.twig' %}
+
+{% set routing = 'actualite' %}
+
+{% block content %}
+
+        <div class="content">
+                {% for actualite in actualites %}
+                {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
+            {% else %}
+                    TODO
+            {% endfor %}
+        </div>
+
+{% endblock %}

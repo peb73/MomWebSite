@@ -88,11 +88,14 @@ body .primary-button {
 
 .footer {
     line-height: normal;
-    background: #111;
+    //background: #111;
     color: #666;
     text-align: center;
     padding: 1em;
     font-size: 80%;
+    //bottom: 0px;
+    //position: relative;
+    //width: 100%;
 }
 
 /*----------------------------------*/

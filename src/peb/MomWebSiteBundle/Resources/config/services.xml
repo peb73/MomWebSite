@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="peb_mom_web_site.services.default.class">peb\MomWebSiteBundle\Services\DefaultService</parameter>
         <parameter key="peb_mom_web_site.services.actualite.class">peb\MomWebSiteBundle\Services\ActualiteService</parameter>
+        <parameter key="peb_mom_web_site.services.actualite_detail.class">peb\MomWebSiteBundle\Services\ActualiteDetailService</parameter>
     </parameters>
 
     <services>
@@ -16,6 +17,10 @@
         </service>
 
         <service id="peb_mom_web_site.services.actualite_service" class="%peb_mom_web_site.services.actualite.class%">
+            <argument type="service" id="doctrine.orm.default_entity_manager"/>
+        </service>
+
+        <service id="peb_mom_web_site.services.actualite_detail_service" class="%peb_mom_web_site.services.actualite_detail.class%">
             <argument type="service" id="doctrine.orm.default_entity_manager"/>
         </service>
     </services>

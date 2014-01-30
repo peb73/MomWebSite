@@ -15,7 +15,7 @@ class ActualiteController extends Controller
      */
     public function actualiteAction()
     {
-        return $this->get('peb_mom_web_site.services.actualite_service')->constructTwigData();
+        return $this->render('pebMomWebSiteBundle:Actualite:actualites.html.twig',$this->get('peb_mom_web_site.services.actualite_service')->constructTwigData());
     }
 
     /**
@@ -23,7 +23,10 @@ class ActualiteController extends Controller
      */
     public function actualiteDetailAction($id)
     {
-    	return "plop";
+
+        return $this->render('pebMomWebSiteBundle:Actualite:actualite.html.twig', $this->get('peb_mom_web_site.services.actualite_detail_service')->constructTwigData($id));
+
+    	//die(var_dump($this->get('peb_mom_web_site.services.actualite_detail_service')->constructTwigData($id)));
     }
 
 }

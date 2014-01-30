@@ -40,5 +40,20 @@ class ActualiteRepository extends EntityRepository
 
 		return $result;
 	}
+
+	/**
+	 * @return null|Actualite
+	 */
+	public function findById($id)
+	{
+		$result = $this->getEntityManager()
+			->createQuery(
+				'SELECT a FROM pebMomWebSiteBundle:Actualite a where a.id = :id'
+			)
+			->setParameter('id',$id)
+			->getOneOrNullResult();
+
+		return $result;
+	}
 	
 }
