@@ -68,7 +68,7 @@ body {
 }
 
 .galerie .jcarousel-wrapper {
-    margin: 0px auto;
+    margin: 20px auto;
     position: relative;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .galerie .jcarousel ul {
-    width: 20000em;
+    width: 200000em;
     position: relative;
     list-style: none;
     margin: 0;
@@ -96,8 +96,8 @@ body {
 
 /** Carousel Controls **/
 
-.jcarousel-control-prev,
-.jcarousel-control-next {
+.jcarousel-prev,
+.jcarousel-next {
     position: absolute;
     top: 200px;
     width: 30px;
@@ -116,21 +116,26 @@ body {
             box-shadow: 0 0 2px #999;
 }
 
-.jcarousel-control-prev {
+.jcarousel-prev {
     left: 50px;
 }
 
-.jcarousel-control-next {
+.jcarousel-next {
     right: 50px;
 }
 
-.jcarousel-control-prev:hover span,
-.jcarousel-control-next:hover span {
+.jcarousel-prev:hover,
+.jcarousel-next:hover {
+    text-decoration: none;
+}
+
+.jcarousel-prev:hover span,
+.jcarousel-next:hover span {
     display: block;
 }
 
-.jcarousel-control-prev.inactive,
-.jcarousel-control-next.inactive {
+.jcarousel-prev.inactive,
+.jcarousel-next.inactive {
     opacity: .5;
     cursor: default;
 }
@@ -143,47 +148,38 @@ body {
     right: 15px;
 }
 
-.jcarousel-pagination a {
-    text-decoration: none;
-    display: inline-block;
-    
-    font-size: 11px;
-    line-height: 14px;
-    min-width: 14px;
-    
-    background: #fff;
-    color: #4E443C;
-    border-radius: 14px;
-    padding: 3px;
-    text-align: center;
-    
-    margin-right: 2px;
-    
-    opacity: .75;
-}
-
-.jcarousel-pagination a.active {
-    background: #4E443C;
-    color: #fff;
-    opacity: 1;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
-}
-
 /** Galerie Navigation **/
 
 .galerie .navigation {
-    height: 70px;
+    width: 90%;
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.galerie .navigation ul {
-    /*width: 20000em;*/
+.galerie .navigation .carousel-navigation {
+    height: 50px;
+}
+
+.galerie .navigation .carousel-navigation ul {
     position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 200000em;
 }
 
-.galerie .navigation li {
+.galerie .navigation .carousel-navigation li {
     float: left;
-    padding: 0px 2px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.galerie .navigation .carousel-navigation li img {
+    display: block;
+    border: 1px solid #fff;
+}
+
+.galerie .navigation .carousel-navigation li.active img {
+    border-color: #e67d25;
 }

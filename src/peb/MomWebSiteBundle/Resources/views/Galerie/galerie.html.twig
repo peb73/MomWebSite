@@ -14,33 +14,57 @@
         	    </ul>
         	</div>
 
-        	<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+        	<a href="#" class="jcarousel-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-next">&rsaquo;</a>
             
             <!--<p class="jcarousel-pagination"></p>-->
         </div>
         <div class="navigation">
-            <div class="carousel carousel-navigation">
+            <div class="carousel-navigation">
                 <ul>
                     <li><img src="{{path('peb_momwebsite_image_image', {id: 22}) }}" width="50" height="50" alt=""></li>
                     <li><img src="{{path('peb_momwebsite_image_image', {id: 23}) }}" width="50" height="50" alt=""></li>
                     <li><img src="{{path('peb_momwebsite_image_image', {id: 24}) }}" width="50" height="50" alt=""></li>
                 </ul>
             </div>
+            <!--
             <a href="#" class="prev prev-navigation">&lsaquo;</a>
             <a href="#" class="next next-navigation">&rsaquo;</a>
+        -->
         </div>
 
     </div>
 
 <script>
+
+    var connector = function(itemNavigation, carouselStage) {
+        return carouselStage.jcarousel('items').eq(itemNavigation.index());
+    };
+
 	$(function() {
-    	$('.jcarousel').jcarousel();
-        $('.carousel-navigation').jcarousel();
+    	var carouselStage = $('.jcarousel').jcarousel();
+        var carouselNavigation = $('.carousel-navigation').jcarousel();
 
+        carouselNavigation.jcarousel('items').each(function() {
+            var item = $(this);
 
+            // This is where we actually connect to items.
+            var target = connector(item, carouselStage);
 
-    	$('.jcarousel-control-prev')
+            item.on('jcarouselcontrol:active', function() {
+                    carouselNavigation.jcarousel('scrollIntoView', this);
+                    item.addClass('active');
+                })
+                .on('jcarouselcontrol:inactive', function() {
+                    item.removeClass('active');
+                })
+                .jcarouselControl({
+                    target: target,
+                    carousel: carouselStage
+                });
+        });
+        
+    	$('.jcarousel-prev')
             .on('jcarouselcontrol:active', function() {
                 $(this).removeClass('inactive');
             })
@@ -51,7 +75,7 @@
                 target: '-=1'
             });
 
-        $('.jcarousel-control-next')
+        $('.jcarousel-next')
             .on('jcarouselcontrol:active', function() {
                 $(this).removeClass('inactive');
             })
@@ -61,15 +85,7 @@
             .jcarouselControl({
                 target: '+=1'
             });
-
-        $('.jcarousel-pagination')
-            .on('jcarouselpagination:active', 'a', function() {
-                $(this).addClass('active');
-            })
-            .on('jcarouselpagination:inactive', 'a', function() {
-                $(this).removeClass('active');
-            })
-            .jcarouselPagination();
+        
 	});
 </script>
 
