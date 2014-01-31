@@ -1,7 +1,8 @@
-<div class="actualite">
+<div class="preview">
     <div class="container">
-        <div class="row">
-            {% if actualite.image!=null%}
+
+        {% if actualite.image!=null%}
+            <div class="row">
                 <div class="col-md-8">
                     <h2>{{actualite.title}}</h2>
                     <h6 class="date">{{actualite.formatedDate}}</h6>
@@ -10,10 +11,11 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                        <img style="width:400px;" src="{{path('peb_momwebsite_image_image', {id: actualite.image.id}) }}" alt="splash image">
-                    
+                    <img style="width:400px;" src="{{path('peb_momwebsite_image_image', {id: actualite.image.id}) }}" alt="splash image">                    
                 </div>
-            {% else %}
+            </div>
+        {% else %}
+            <div class="row">
                 <div class="col-md-12">
                     <h2>{{actualite.title}}</h2>
                     <h6 class="date">{{actualite.formatedDate}}</h6>
@@ -21,7 +23,13 @@
                         {{actualite.text}}
                     </p>
                 </div>
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
+            <div class="row">
+                <div class="col-md-12 link">
+                    <a href="{{ path('peb_momwebsite_actualite_actualitedetail', {id: actualite.id}) }}">Lire la suite</a>
+                </div>
+            </div>
+
     </div>
 </div>

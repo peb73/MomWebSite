@@ -4,14 +4,12 @@
 
 {% block content %}
 
-    <div class="splash">
-        {% include "pebMomWebSiteBundle:Default:splash.html.twig" %}
-    </div>
+    {% include "pebMomWebSiteBundle:Default:splash.html.twig" %}
 
     <div class="content">        
 
         {% for actualite in actualites %}
-            {% include "pebMomWebSiteBundle:Default:actualite.html.twig" %}
+            {% include "pebMomWebSiteBundle:Actualite:preview.html.twig" %}
         {% else %}
             {% include "noactualite.html.twig" %}
         {% endfor %}

@@ -10,8 +10,8 @@
 		<!-- stylesheet -->
 		{% 
 			stylesheets 
-			'bundles/pebmomwebsite/bower_components/pure/pure-min.css'
-			'bundles/pebmomwebsite/bower_components/font-awesome/css/font-awesome.min.css'
+			'bundles/pebmomwebsite/bower_components/bootstrap/dist/css/bootstrap.min.css'
+			'bundles/pebmomwebsite/bower_components/bootstrap/dist/css/bootstrap-theme.min.css'
 			'bundles/pebmomwebsite/css/style.css'
 			filter='cssrewrite' 
 		%}
@@ -22,37 +22,43 @@
 		{% javascripts 
 			'@pebMomWebSiteBundle/Resources/public/bower_components/jquery/jquery.min.js'
 			'@pebMomWebSiteBundle/Resources/public/bower_components/jcarousel/dist/jquery.jcarousel.min.js'
+			'@pebMomWebSiteBundle/Resources/public/bower_components/bootstrap/dist/js/bootstrap.min.js'
 		%}
 		    <script type="text/javascript" src="{{ asset_url }}"></script>
 		{% endjavascripts %}
 
 	</head>
 	<body>
-
-
-		<div class="content">
-		    <div class="header">
-		        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-		            <a class="pure-menu-heading" href="">Michelle BOITEAU</a>
-
-		            <ul>
-		                <li {% if routing=='default'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_default_index', {}) }}">Accueil</a></li>
-		                <li {% if routing=='actualite'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_actualite_actualite', {}) }}">Actualités</a></li>
-		                <li {% if routing=='galerie'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_galerie_galerie', {}) }}">Galerie</a></li>
-		                <!--
-		                <li {% if routing=='cours'%}class="pure-menu-selected"{% endif %}><a href="{{ path('peb_momwebsite_cours_cours', {}) }}">Cours</a></li>
-			            -->
-		            </ul>
-		        </div>
-		    </div>
-
-		    {% block content %}
+		<section class="header">
+			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="{{ path('peb_momwebsite_default_index', {}) }}">Michelle BOITEAU</a>
+						</div>
+						<div class="collapse navbar-collapse navbar-right">
+							<ul class="nav navbar-nav">
+								<li {% if routing=='default'%}class="active"{% endif %}><a href="{{ path('peb_momwebsite_default_index', {}) }}">Accueil</a></li>
+								<li {% if routing=='actualite'%}class="active"{% endif %}><a href="{{ path('peb_momwebsite_actualite_actualite', {}) }}">Actualite</a></li>
+								<li {% if routing=='galerie'%}class="active"{% endif %}><a href="{{ path('peb_momwebsite_galerie_galerie', {}) }}">Galerie</a></li>
+							</ul>
+						</div><!--/.nav-collapse -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="content">
+			{% block content %}
 			    content
 		    {% endblock%}
-
-		    <div class="footer">
-		       	Design by peb
-		    </div>
-		</div>
+		</section>
+	    <div class="footer">
+	       	Design by peb
+	    </div>
 	<body>
 </html>

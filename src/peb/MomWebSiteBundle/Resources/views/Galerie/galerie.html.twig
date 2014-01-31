@@ -4,29 +4,41 @@
 
 {% block content %}
 
-<div class="jcarousel-wrapper">
-	<div class="jcarousel">
-	    <ul>
-	        <li><img src="{{path('peb_momwebsite_image_image', {id: 22}) }}" width="600" height="400" alt=""></li>
-	        <li><img src="{{path('peb_momwebsite_image_image', {id: 23}) }}" width="600" height="400" alt=""></li>
-	        <li><img src="{{path('peb_momwebsite_image_image', {id: 23}) }}" width="600" height="400" alt=""></li>
-	    </ul>
-	</div>
+    <div class="galerie">
+        <div class="jcarousel-wrapper">
+        	<div class="jcarousel">
+        	    <ul>
+        	        <li><img src="{{path('peb_momwebsite_image_image', {id: 22}) }}" width="600" height="400" alt=""></li>
+        	        <li><img src="{{path('peb_momwebsite_image_image', {id: 23}) }}" width="600" height="400" alt=""></li>
+        	        <li><img src="{{path('peb_momwebsite_image_image', {id: 24}) }}" width="600" height="400" alt=""></li>
+        	    </ul>
+        	</div>
 
-	<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-    
-    <p class="jcarousel-pagination">
-        
-    </p>
+        	<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+            
+            <!--<p class="jcarousel-pagination"></p>-->
+        </div>
+        <div class="navigation">
+            <div class="carousel carousel-navigation">
+                <ul>
+                    <li><img src="{{path('peb_momwebsite_image_image', {id: 22}) }}" width="50" height="50" alt=""></li>
+                    <li><img src="{{path('peb_momwebsite_image_image', {id: 23}) }}" width="50" height="50" alt=""></li>
+                    <li><img src="{{path('peb_momwebsite_image_image', {id: 24}) }}" width="50" height="50" alt=""></li>
+                </ul>
+            </div>
+            <a href="#" class="prev prev-navigation">&lsaquo;</a>
+            <a href="#" class="next next-navigation">&rsaquo;</a>
+        </div>
 
-</div>
+    </div>
 
 <script>
 	$(function() {
-    	$('.jcarousel').jcarousel({
-    	    // Configuration goes here
-    	});
+    	$('.jcarousel').jcarousel();
+        $('.carousel-navigation').jcarousel();
+
+
 
     	$('.jcarousel-control-prev')
             .on('jcarouselcontrol:active', function() {

@@ -1,122 +1,60 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0 auto;
-    line-height: 1.7em;
-}
-
-.l-box {
-    padding: 1em;
-}
-
-.header {
-    margin: 0 0;
-}
-
-.header .pure-menu {
-    padding: 0;
-}
-
-.header .pure-menu li a:hover,
-.header .pure-menu li a:focus {
-    background: none;
-    border: none;
-    color: #aaa;
-}
-
-body .primary-button {
-    background: #02a6eb;
-    color: #fff;
-}
-
-.splash {
-    margin: 2em auto 0;
-    padding: 3em 0.5em;
-    background: #eee;
-}
-.splash .splash-head {
-    font-size: 300%;
-    margin: 0em 0;
-    line-height: 1.2em;
-}
-.splash .splash-subhead {
-    color: #999;
-    font-weight: 300;
-    line-height: 1.4em;
-}
-.splash .primary-button {
-    font-size: 150%;
-}
-
-
-.content .content-subhead {
-    color: #999;
-    padding-bottom: 0.3em;
-    text-transform: uppercase;
-    margin: 0;
-    border-bottom: 2px solid #eee;
-    display: inline-block;
-}
-
-.content .content-ribbon {
-    margin: 2em;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 0px;
-}
-
-/*
-.content .content-ribbon:last-child {
-    margin-bottom: 0px;
-    border-bottom: none;
-}
-*/
-
-.ribbon {
-    background: #eee;
-    text-align: center;
-    padding: 2em;
-    color: #999;
-}
-.ribbon h2 {
-    display: inline;
-    font-weight: normal;
+  padding-top: 50px;
 }
 
 .footer {
     line-height: normal;
-    //background: #111;
     color: #666;
     text-align: center;
     padding: 1em;
     font-size: 80%;
-    //bottom: 0px;
-    //position: relative;
-    //width: 100%;
 }
 
-/*----------------------------------*/
-/*              shorter             */
-/*----------------------------------*/
+.splash,
+.linkactualite,
+.preview,
+.actualite {
+    padding: 20px 0;
+}
 
-.content-ribbon.shorter .description{
-    max-height: 200px;
+.splash {   
+    background: #7F8C8D;
+}
+
+.splash .portrait {
+    text-align: center;
+}
+
+.splash .portrait img{
+    width:300px;
+    border-radius: 50px;
+}
+
+.preview {
+    border-top: 1px solid #eee;
+}
+
+.actualite .date,
+.preview .date {
+    color: #999;
+}
+
+.preview .text {
+    height: 60px;
     overflow: hidden;
 }
 
-.content-ribbon.shorter .link{
-    text-align: center;
-    padding-bottom: 1em;
+.preview .text:after {
+    content:"...";
 }
 
-.l-box.link {
+.preview .link{
     text-align: center;
 }
 
-
+.linkactualite {
+    text-align: center;
+}
 
 
 
@@ -124,43 +62,27 @@ body .primary-button {
 /*              jcarousel           */
 /*----------------------------------*/
 
-.jcarousel-wrapper {
-    margin: 20px auto;
+.galerie {
+    background: black;
+    padding: 20px 0px;
+}
+
+.galerie .jcarousel-wrapper {
+    margin: 0px auto;
     position: relative;
-    border: 10px solid #fff;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
-    -webkit-box-shadow: 0 0 2px #999;
-       -moz-box-shadow: 0 0 2px #999;
-            box-shadow: 0 0 2px #999;
-}
-
-
-.jcarousel-wrapper .photo-credits {
-    position: absolute;
-    right: 15px;
-    bottom: 0;
-    font-size: 13px;
-    color: #fff;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
-    opacity: .66;
-}
-
-.jcarousel-wrapper .photo-credits a {
-    color: #fff;
 }
 
 /** Carousel **/
 
-.jcarousel {
+.galerie .jcarousel {
     position: relative;
     overflow: hidden;
     width: 600px;
     height: 400px;
+    margin: 0 auto;
 }
 
-.jcarousel ul {
+.galerie .jcarousel ul {
     width: 20000em;
     position: relative;
     list-style: none;
@@ -168,7 +90,7 @@ body .primary-button {
     padding: 0;
 }
 
-.jcarousel li {
+.galerie .jcarousel li {
     float: left;
 }
 
@@ -195,11 +117,11 @@ body .primary-button {
 }
 
 .jcarousel-control-prev {
-    left: -50px;
+    left: 50px;
 }
 
 .jcarousel-control-next {
-    right: -50px;
+    right: 50px;
 }
 
 .jcarousel-control-prev:hover span,
@@ -218,7 +140,7 @@ body .primary-button {
 .jcarousel-pagination {
     position: absolute;
     bottom: 0;
-    left: 15px;
+    right: 15px;
 }
 
 .jcarousel-pagination a {
@@ -245,4 +167,23 @@ body .primary-button {
     color: #fff;
     opacity: 1;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+}
+
+/** Galerie Navigation **/
+
+.galerie .navigation {
+    height: 70px;
+}
+
+.galerie .navigation ul {
+    /*width: 20000em;*/
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.galerie .navigation li {
+    float: left;
+    padding: 0px 2px;
 }

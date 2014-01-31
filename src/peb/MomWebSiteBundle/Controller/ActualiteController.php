@@ -23,10 +23,7 @@ class ActualiteController extends Controller
      */
     public function actualiteDetailAction($id)
     {
-
         return $this->render('pebMomWebSiteBundle:Actualite:actualite.html.twig', $this->get('peb_mom_web_site.services.actualite_detail_service')->constructTwigData($id));
-
-    	//die(var_dump($this->get('peb_mom_web_site.services.actualite_detail_service')->constructTwigData($id)));
     }
 
 }
